@@ -1,0 +1,27 @@
+﻿Build started 2016/3/28 下午 03:56:15.
+     1>Project "D:\Program\TestFilr\TestFilr\TestFilr.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
+         Main.cpp
+     1>d:\program\testfilr\testfilr\main.cpp(18): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\program\testfilr\testfilr\main.cpp(20): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\program\testfilr\testfilr\main.cpp(27): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\program\testfilr\testfilr\main.cpp(28): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\program\testfilr\testfilr\main.cpp(30): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\program\testfilr\testfilr\main.cpp(32): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>d:\program\testfilr\testfilr\main.cpp(81): error C2065: 'TempImg' : undeclared identifier
+     1>d:\program\testfilr\testfilr\main.cpp(89): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\program\testfilr\testfilr\main.cpp(91): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\program\testfilr\testfilr\main.cpp(93): error C2065: 'TempImg' : undeclared identifier
+     1>d:\program\testfilr\testfilr\main.cpp(94): error C2065: 'TempImg' : undeclared identifier
+     1>d:\program\testfilr\testfilr\main.cpp(159): error C2065: 'TempImg' : undeclared identifier
+     1>d:\program\testfilr\testfilr\main.cpp(183): error C2065: 'TempImg' : undeclared identifier
+     1>d:\program\testfilr\testfilr\main.cpp(210): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\program\testfilr\testfilr\main.cpp(212): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\program\testfilr\testfilr\main.cpp(214): error C2065: 'TempImg' : undeclared identifier
+     1>d:\program\testfilr\testfilr\main.cpp(215): error C2065: 'TempImg' : undeclared identifier
+     1>Done Building Project "D:\Program\TestFilr\TestFilr\TestFilr.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.80

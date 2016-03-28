@@ -1,0 +1,1883 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 12.00.21005.1 (f3352eaf).
+//
+// d:\program\testfilr\testfilr\debug\photonsdk.tlh
+//
+// C++ source equivalent of Win32 type library photonSDK.dll
+// compiler-generated file created 02/26/16 at 13:22:25 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace Photon {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("54054746-3f58-42a1-b750-ec66b15f3824"))
+/* LIBID */ __Photon;
+struct __declspec(uuid("2a3a3c03-36bf-46e2-8050-8628a93525df"))
+/* dispinterface */ _IPhotonEvents;
+struct __declspec(uuid("a2f04939-0f69-4b59-b714-cd92a380d7b9"))
+/* dual interface */ ISpectare;
+enum Result;
+struct __declspec(uuid("e2866434-dec0-4eb2-a176-f41ee8372653"))
+/* dual interface */ ITau;
+enum ThermalThrottleButtonState;
+enum CalDestinationId;
+struct /* coclass */ PhotonCam;
+struct __declspec(uuid("cdfe77e2-4ee0-4d36-9019-126be77a5d96"))
+/* dual interface */ IPhotonCam;
+enum AGCAlgorithm;
+enum FPATempMode;
+enum Options;
+enum FFCMode;
+enum ShutterPosition;
+enum IsothermMode;
+enum IsothermThresholdType;
+enum GainMode;
+enum SpotDisplay;
+enum SpotMeterMode;
+enum DigitalOut;
+enum ExtSyncMode;
+enum TestPattern;
+enum ImageOrientation;
+enum ColorLut;
+enum VideoMode;
+enum VideoStandard;
+enum ExtOffsetState;
+enum VideoColor;
+struct /* coclass */ Spectare;
+struct __declspec(uuid("7657347f-6d34-4443-92cf-e9da4f8b9b5f"))
+/* dispinterface */ _ITauEvents;
+struct /* coclass */ Tau;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(_IPhotonEvents, __uuidof(_IPhotonEvents));
+_COM_SMARTPTR_TYPEDEF(ISpectare, __uuidof(ISpectare));
+_COM_SMARTPTR_TYPEDEF(ITau, __uuidof(ITau));
+_COM_SMARTPTR_TYPEDEF(IPhotonCam, __uuidof(IPhotonCam));
+_COM_SMARTPTR_TYPEDEF(_ITauEvents, __uuidof(_ITauEvents));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("2a3a3c03-36bf-46e2-8050-8628a93525df"))
+_IPhotonEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT ProgressStep (
+        _bstr_t step );
+    HRESULT ProgressPercentage (
+        int percentage );
+    HRESULT ExitStatus (
+        int exitCode );
+};
+
+enum Result
+{
+    CAM_OK = 0,
+    CAM_COMM_OK = 0,
+    CAM_ERROR = -1,
+    CAM_NOT_READY = -2,
+    CAM_RANGE_ERROR = -3,
+    CAM_CHECKSUM_ERROR = -4,
+    CAM_UNDEFINED_PROCESS_ERROR = -5,
+    CAM_UNDEFINED_FUNCTION_ERROR = -6,
+    CAM_BYTE_COUNT_ERROR = -9,
+    CAM_FEATURE_NOT_ENABLED = -10,
+    CAM_COMM_PORT_NOT_OPEN = -256,
+    CAM_COMM_RANGE_ERROR = -257,
+    CAM_ERROR_CREATING_COMM = -258,
+    CAM_ERROR_STARTING_COMM = -259,
+    CAM_ERROR_CLOSING_COMM = -260,
+    CAM_COMM_CHECKSUM_ERROR = -261,
+    CAM_COMM_NO_DEV = -262,
+    CAM_COMM_TIMEOUT_ERROR = -263,
+    CAM_COMM_ERROR_WRITING_COMM = -264,
+    CAM_COMM_ERROR_READING_COMM = -265,
+    CAM_COMM_ECHO_ERROR = -267,
+    CAM_COMM_COUNT_ERROR = -268,
+    CAM_BAD_BITMAP_FILE = -512,
+    CAM_BAD_CONFIG_FILE = -513,
+    CAM_ERROR_LOADING_FILE = -514,
+    CAM_OPERATION_CANCELED = -515,
+    CAM_UNDEFINED_ERROR_CODE = -516
+};
+
+struct __declspec(uuid("a2f04939-0f69-4b59-b714-cd92a380d7b9"))
+ISpectare : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    enum Result SetIntegrationTime (
+        float integrationTimeMS );
+    enum Result GetIntegrationTime (
+        float * integrationTimeMS );
+    enum Result SetSDKDeviceId (
+        int deviceId );
+    enum Result GetFrameRate (
+        float * frameRateHz );
+    enum Result SetFrameRate (
+        float frameRateHz );
+    enum Result GetElapsedTime (
+        int * timeSec );
+    enum Result SetDACVoltage (
+        int channel,
+        int valuemV );
+    enum Result CalculateGain ( );
+    enum Result GetIntegrationMode (
+        int * intMode );
+    enum Result SetIntegrationMode (
+        int intMode );
+    enum Result GetCalStatus (
+        short * status );
+    enum Result GetCorrectionMask (
+        short * correctionMask );
+    enum Result SetCorrectionMask (
+        short correctionMask );
+    enum Result GetCoolerTemp (
+        double * tempInKelvin );
+    enum Result GetLensRevision (
+        BSTR * revString );
+    enum Result SetLensPosition (
+        short zoomPosition,
+        short focusPosition,
+        short movementMode );
+    enum Result GetLensUptimeHours (
+        short * upTimeHours );
+    enum Result GetLensStatus (
+        short * status );
+    enum Result GetLensCurrentFOV (
+        short * fovIndex );
+    enum Result GetLensBitStatus (
+        short * status );
+    enum Result SetLensFOVIndex (
+        short fov,
+        short infinityFlag );
+    enum Result LensStartZoomIn ( );
+    enum Result LensStartZoomOut ( );
+    enum Result LensStopZoom ( );
+    enum Result LensStartFocusIn ( );
+    enum Result LensStartFocusOut ( );
+    enum Result LensStopFocus ( );
+    enum Result GetLensTemperature (
+        short * lensTemp );
+    enum Result GetMaxPixelLimit (
+        short * maxPixelLimit );
+    enum Result GetMinPixelLimit (
+        short * minPixelLimit );
+    enum Result SetMaxPixelLimit (
+        short maxPixelLimit );
+    enum Result SetMinPixelLimit (
+        short minPixelLimit );
+    enum Result GetBadPixelDetectionResults (
+        int * badPixelRange,
+        int * badPixelGain );
+    enum Result GetMaxPixelGain (
+        short * maxPixelGain );
+    enum Result GetMinPixelGain (
+        short * minPixelGain );
+    enum Result SetMaxPixelGain (
+        short maxPixelGain );
+    enum Result SetMinPixelGain (
+        short minPixelGain );
+    enum Result GetSceneMeanIntensity (
+        short * sceneMeanIntensity );
+    enum Result SetLensBitRequest ( );
+    enum Result GetAutoFocusEnable (
+        short * autoFocusEnable );
+    enum Result GetAutoFocusROI (
+        short * autoFocusRoi );
+    enum Result GetAutoFocusMetricResult (
+        unsigned long * autoFocusMetricResult );
+    enum Result GetAutoFocusMetricThreshold (
+        unsigned long * autoFocusMetricThreshold );
+    enum Result SetAutoFocusEnable (
+        short autoFocusEnable );
+    enum Result SetAutoFocusROI (
+        short autoFocusRoi );
+    enum Result SetAutoFocusMetricThreshold (
+        unsigned long autoFocusMetricThreshold );
+    enum Result GetAutoFocusBumpAmount (
+        short * autoFocusBumpAmount );
+    enum Result SetAutoFocusBumpAmount (
+        short autoFocusBumpAmount );
+    enum Result GetLensExtents (
+        short * zoomMinExtent,
+        short * zoomMaxExtent,
+        short * focusMinExtent,
+        short * focusMaxExtent );
+    enum Result GetLensPosition (
+        short * zoomPosition,
+        short * focusPosition,
+        short * movementMode );
+    enum Result GetFPAExtents (
+        short * fpaCols,
+        short * fpaRows );
+    enum Result GetActiveNuc (
+        short * activeNuc );
+    enum Result SetActiveNuc (
+        short activeNuc );
+    enum Result GetPixelGain (
+        short row,
+        short col,
+        short * gain );
+    enum Result SetPixelGain (
+        short row,
+        short col,
+        short gain,
+        short badPixelStatus );
+    enum Result StartLensAutoFocus ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_SetIntegrationTime (
+        /*[in]*/ float integrationTimeMS,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetIntegrationTime (
+        /*[out]*/ float * integrationTimeMS,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetSDKDeviceId (
+        /*[in]*/ int deviceId,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetFrameRate (
+        /*[out]*/ float * frameRateHz,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetFrameRate (
+        /*[in]*/ float frameRateHz,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetElapsedTime (
+        /*[out]*/ int * timeSec,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetDACVoltage (
+        /*[in]*/ int channel,
+        /*[in]*/ int valuemV,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_CalculateGain (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetIntegrationMode (
+        /*[out]*/ int * intMode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetIntegrationMode (
+        /*[in]*/ int intMode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetCalStatus (
+        /*[out]*/ short * status,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetCorrectionMask (
+        /*[out]*/ short * correctionMask,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetCorrectionMask (
+        /*[in]*/ short correctionMask,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetCoolerTemp (
+        /*[out]*/ double * tempInKelvin,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetLensRevision (
+        /*[out]*/ BSTR * revString,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetLensPosition (
+        /*[in]*/ short zoomPosition,
+        /*[in]*/ short focusPosition,
+        /*[in]*/ short movementMode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetLensUptimeHours (
+        /*[out]*/ short * upTimeHours,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetLensStatus (
+        /*[out]*/ short * status,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetLensCurrentFOV (
+        /*[out]*/ short * fovIndex,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetLensBitStatus (
+        /*[out]*/ short * status,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetLensFOVIndex (
+        /*[in]*/ short fov,
+        /*[in]*/ short infinityFlag,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_LensStartZoomIn (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_LensStartZoomOut (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_LensStopZoom (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_LensStartFocusIn (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_LensStartFocusOut (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_LensStopFocus (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetLensTemperature (
+        /*[out]*/ short * lensTemp,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetMaxPixelLimit (
+        /*[out]*/ short * maxPixelLimit,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetMinPixelLimit (
+        /*[out]*/ short * minPixelLimit,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetMaxPixelLimit (
+        /*[in]*/ short maxPixelLimit,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetMinPixelLimit (
+        /*[in]*/ short minPixelLimit,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetBadPixelDetectionResults (
+        /*[out]*/ int * badPixelRange,
+        /*[out]*/ int * badPixelGain,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetMaxPixelGain (
+        /*[out]*/ short * maxPixelGain,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetMinPixelGain (
+        /*[out]*/ short * minPixelGain,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetMaxPixelGain (
+        /*[in]*/ short maxPixelGain,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetMinPixelGain (
+        /*[in]*/ short minPixelGain,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetSceneMeanIntensity (
+        /*[out]*/ short * sceneMeanIntensity,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetLensBitRequest (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetAutoFocusEnable (
+        /*[out]*/ short * autoFocusEnable,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetAutoFocusROI (
+        /*[out]*/ short * autoFocusRoi,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetAutoFocusMetricResult (
+        /*[out]*/ unsigned long * autoFocusMetricResult,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetAutoFocusMetricThreshold (
+        /*[out]*/ unsigned long * autoFocusMetricThreshold,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetAutoFocusEnable (
+        /*[in]*/ short autoFocusEnable,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetAutoFocusROI (
+        /*[in]*/ short autoFocusRoi,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetAutoFocusMetricThreshold (
+        /*[in]*/ unsigned long autoFocusMetricThreshold,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetAutoFocusBumpAmount (
+        /*[out]*/ short * autoFocusBumpAmount,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetAutoFocusBumpAmount (
+        /*[in]*/ short autoFocusBumpAmount,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetLensExtents (
+        /*[out]*/ short * zoomMinExtent,
+        /*[out]*/ short * zoomMaxExtent,
+        /*[out]*/ short * focusMinExtent,
+        /*[out]*/ short * focusMaxExtent,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetLensPosition (
+        /*[out]*/ short * zoomPosition,
+        /*[out]*/ short * focusPosition,
+        /*[out]*/ short * movementMode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetFPAExtents (
+        /*[out]*/ short * fpaCols,
+        /*[out]*/ short * fpaRows,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetActiveNuc (
+        /*[out]*/ short * activeNuc,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetActiveNuc (
+        /*[in]*/ short activeNuc,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetPixelGain (
+        /*[in]*/ short row,
+        /*[in]*/ short col,
+        /*[out]*/ short * gain,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetPixelGain (
+        /*[in]*/ short row,
+        /*[in]*/ short col,
+        /*[in]*/ short gain,
+        /*[in]*/ short badPixelStatus,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_StartLensAutoFocus (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+};
+
+enum ThermalThrottleButtonState
+{
+    BULLARD_TT_UP_PRESSED = 0,
+    BULLARD_TT_UP_RELEASED = 1,
+    BULLARD_TT_DOWN_PRESSED = 2,
+    BULLARD_TT_DOWN_RELEASED = 3
+};
+
+enum CalDestinationId
+{
+    CAMERA_DEST = 1,
+    BASKETBOARD_DEST = 2,
+    DEFAULT_DEST = 3
+};
+
+struct __declspec(uuid("e2866434-dec0-4eb2-a176-f41ee8372653"))
+ITau : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    enum Result SetThermalthrottleButtonState (
+        enum ThermalThrottleButtonState buttonState,
+        short * thermValue );
+    enum Result SetSDKDeviceId (
+        int deviceId );
+    enum Result StartSplashScreenDownload (
+        LPSTR filename );
+    HRESULT CancelAsyncFunction ( );
+    enum Result SetSplashNumber (
+        int splashNumber );
+    enum Result SetSplash1Delay (
+        int delay );
+    enum Result SetSplash2Delay (
+        int delay );
+    enum Result ReadScratchPad (
+        unsigned char * * scratchPad );
+    enum Result WriteScratchPad (
+        unsigned char * * scratchPad );
+    enum Result SetBatteryVoltageThresholds (
+        double VoltVidOff,
+        double Volt10Percent,
+        double Volt25Percent,
+        double Volt50Percent,
+        double Volt75Percent,
+        double Volt100Percent );
+    enum Result WriteSymbols ( );
+    enum Result GetBatteryVoltageThresholds (
+        double * VoltVidOff,
+        double * Volt10Percent,
+        double * Volt25Percent,
+        double * Volt50Percent,
+        double * Volt75Percent,
+        double * Volt100Percent );
+    enum Result ReadImageCaptureLine (
+        unsigned long address,
+        short width,
+        long * addrIncr,
+        short * * pixBuff );
+    enum Result GetFPAType (
+        short * fpaType );
+    enum Result SetFPAType (
+        short fpaType );
+    enum Result ClearSnapshots ( );
+    enum Result SetUserSymbolData (
+        short * symbolData,
+        short symbolDataSize );
+    enum Result GetSnapshotAddress (
+        short nucIndex,
+        unsigned long * address );
+    enum Result ReadRawSnapshotData (
+        unsigned long address,
+        short byteCount,
+        unsigned char * * line );
+    enum Result ReadLutList (
+        short * lutCount );
+    enum Result GetLutTitle (
+        int index,
+        BSTR * lutTitle );
+    enum Result DownloadEncryptedFile (
+        _bstr_t filename,
+        long offset );
+    enum Result EraseSplashScreen (
+        int splashScreenNumber );
+    enum Result ReadMemory (
+        unsigned long addr,
+        short byteCount,
+        unsigned char * data );
+    enum Result WriteMemory (
+        unsigned long addr,
+        short byteCount,
+        unsigned char * data );
+    enum Result ReadDramNuc (
+        short nucIndex,
+        short offsetHi,
+        short offsetLo,
+        short dataLen,
+        unsigned char * data );
+    enum Result WriteDramNuc (
+        short nucIndex,
+        short offsetHi,
+        short offsetLo,
+        short dataLen,
+        unsigned char * data );
+    enum Result SetPixelGain (
+        short row,
+        short column,
+        short pixelValue );
+    enum Result WriteGainTable (
+        short buffer );
+    enum Result SetBadPixel (
+        short row,
+        short column,
+        short BadGoodPixelFlag );
+    enum Result GetLensNumber (
+        short * lensNumber );
+    enum Result SetLensNumber (
+        short lensNumber );
+    enum Result WriteFFCOffsetForLens ( );
+    enum Result EraseFFCOffsetForCurrentLens ( );
+    enum Result SetExtOffsetTempThresholds (
+        short ROCZero,
+        short ROCEighth,
+        short ROCQuarter,
+        short ROCThreeEighth,
+        short ROCHalf,
+        short ROCFiveEighth,
+        short ROCThreeFourth,
+        short ROCSevenEighth );
+    enum Result GetExtOffsetTempThresholds (
+        short * ROCZero,
+        short * ROCEighth,
+        short * ROCQuarter,
+        short * ROCThreeEighth,
+        short * ROCHalf,
+        short * ROCFiveEighth,
+        short * ROCThreeFourth,
+        short * ROCSevenEighth );
+    enum Result SetBasketBoardCommDestId (
+        enum CalDestinationId destinationId );
+    enum Result GetBasketBoardCommDestId (
+        enum CalDestinationId * destinationId );
+    enum Result SetBasketBoardSubslotId (
+        int subSlotId );
+    enum Result GetBasketBoardSubSlotId (
+        int * subSlotId );
+    enum Result SetFourUpMode (
+        int IsFourUp );
+    enum Result GetFourUpMode (
+        int * IsFourUp );
+    enum Result SetCommRetries (
+        int numOfRetries );
+    enum Result GetCommRetries (
+        int * numOfRetries );
+    enum Result SetGainSwitchParams (
+        short HiLoThresh,
+        short HiLoPOP,
+        short LoHiThresh,
+        short LoHiPOP,
+        short MediumThresh,
+        short MediumPOP );
+    enum Result GetGainSwitchParams (
+        short * HiLoThresh,
+        short * HiLoPOP,
+        short * LoHiThresh,
+        short * LoHiPOP,
+        short * MediumThresh,
+        short * MediumPOP );
+    enum Result SetBadPixelNew (
+        short row,
+        short column,
+        short pixelValue );
+    enum Result CalculateFrameDiff ( );
+    enum Result CalculateGainFrame ( );
+    HRESULT FindBadPixels (
+        enum Result * Result );
+    enum Result GetBaudRate (
+        short * baudRate );
+    HRESULT SetBaudRate (
+        short baudRate,
+        enum Result * Result );
+    enum Result WriteGainTableNew (
+        short gainTableType,
+        short tableNum );
+    enum Result CalculateGain ( );
+    enum Result GetFlashStatus (
+        short * status );
+    enum Result GetNonVolatileFFCAddress (
+        short lensNumber,
+        unsigned long * address );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_SetThermalthrottleButtonState (
+        /*[in]*/ enum ThermalThrottleButtonState buttonState,
+        /*[out]*/ short * thermValue,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetSDKDeviceId (
+        /*[in]*/ int deviceId,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_StartSplashScreenDownload (
+        /*[in]*/ LPSTR filename,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_CancelAsyncFunction ( ) = 0;
+      virtual HRESULT __stdcall raw_SetSplashNumber (
+        /*[in]*/ int splashNumber,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetSplash1Delay (
+        /*[in]*/ int delay,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetSplash2Delay (
+        /*[in]*/ int delay,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_ReadScratchPad (
+        /*[out]*/ unsigned char * * scratchPad,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_WriteScratchPad (
+        /*[in]*/ unsigned char * * scratchPad,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetBatteryVoltageThresholds (
+        /*[in]*/ double VoltVidOff,
+        /*[in]*/ double Volt10Percent,
+        /*[in]*/ double Volt25Percent,
+        /*[in]*/ double Volt50Percent,
+        /*[in]*/ double Volt75Percent,
+        /*[in]*/ double Volt100Percent,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_WriteSymbols (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetBatteryVoltageThresholds (
+        /*[out]*/ double * VoltVidOff,
+        /*[out]*/ double * Volt10Percent,
+        /*[out]*/ double * Volt25Percent,
+        /*[out]*/ double * Volt50Percent,
+        /*[out]*/ double * Volt75Percent,
+        /*[out]*/ double * Volt100Percent,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_ReadImageCaptureLine (
+        /*[in]*/ unsigned long address,
+        /*[in]*/ short width,
+        /*[out]*/ long * addrIncr,
+        /*[out]*/ short * * pixBuff,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetFPAType (
+        /*[out]*/ short * fpaType,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetFPAType (
+        /*[in]*/ short fpaType,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_ClearSnapshots (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetUserSymbolData (
+        /*[in,out]*/ short * symbolData,
+        /*[in]*/ short symbolDataSize,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetSnapshotAddress (
+        /*[in]*/ short nucIndex,
+        /*[out]*/ unsigned long * address,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_ReadRawSnapshotData (
+        /*[in]*/ unsigned long address,
+        /*[in]*/ short byteCount,
+        /*[out]*/ unsigned char * * line,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_ReadLutList (
+        /*[out]*/ short * lutCount,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetLutTitle (
+        /*[in]*/ int index,
+        /*[out]*/ BSTR * lutTitle,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_DownloadEncryptedFile (
+        /*[in]*/ BSTR filename,
+        /*[in]*/ long offset,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_EraseSplashScreen (
+        /*[in]*/ int splashScreenNumber,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_ReadMemory (
+        /*[in]*/ unsigned long addr,
+        /*[in]*/ short byteCount,
+        /*[out]*/ unsigned char * data,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_WriteMemory (
+        /*[in]*/ unsigned long addr,
+        /*[in]*/ short byteCount,
+        /*[in]*/ unsigned char * data,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_ReadDramNuc (
+        /*[in]*/ short nucIndex,
+        /*[in]*/ short offsetHi,
+        /*[in]*/ short offsetLo,
+        /*[in]*/ short dataLen,
+        /*[out]*/ unsigned char * data,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_WriteDramNuc (
+        /*[in]*/ short nucIndex,
+        /*[in]*/ short offsetHi,
+        /*[in]*/ short offsetLo,
+        /*[in]*/ short dataLen,
+        /*[in]*/ unsigned char * data,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetPixelGain (
+        /*[in]*/ short row,
+        /*[in]*/ short column,
+        /*[in]*/ short pixelValue,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_WriteGainTable (
+        /*[in]*/ short buffer,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetBadPixel (
+        /*[in]*/ short row,
+        /*[in]*/ short column,
+        /*[in]*/ short BadGoodPixelFlag,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetLensNumber (
+        /*[out]*/ short * lensNumber,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetLensNumber (
+        /*[in]*/ short lensNumber,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_WriteFFCOffsetForLens (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_EraseFFCOffsetForCurrentLens (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetExtOffsetTempThresholds (
+        /*[in]*/ short ROCZero,
+        /*[in]*/ short ROCEighth,
+        /*[in]*/ short ROCQuarter,
+        /*[in]*/ short ROCThreeEighth,
+        /*[in]*/ short ROCHalf,
+        /*[in]*/ short ROCFiveEighth,
+        /*[in]*/ short ROCThreeFourth,
+        /*[in]*/ short ROCSevenEighth,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetExtOffsetTempThresholds (
+        /*[out]*/ short * ROCZero,
+        /*[out]*/ short * ROCEighth,
+        /*[out]*/ short * ROCQuarter,
+        /*[out]*/ short * ROCThreeEighth,
+        /*[out]*/ short * ROCHalf,
+        /*[out]*/ short * ROCFiveEighth,
+        /*[out]*/ short * ROCThreeFourth,
+        /*[out]*/ short * ROCSevenEighth,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetBasketBoardCommDestId (
+        /*[in]*/ enum CalDestinationId destinationId,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetBasketBoardCommDestId (
+        /*[out]*/ enum CalDestinationId * destinationId,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetBasketBoardSubslotId (
+        /*[in]*/ int subSlotId,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetBasketBoardSubSlotId (
+        /*[out]*/ int * subSlotId,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetFourUpMode (
+        /*[in]*/ int IsFourUp,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetFourUpMode (
+        /*[out]*/ int * IsFourUp,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetCommRetries (
+        /*[in]*/ int numOfRetries,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetCommRetries (
+        /*[out]*/ int * numOfRetries,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetGainSwitchParams (
+        /*[in]*/ short HiLoThresh,
+        /*[in]*/ short HiLoPOP,
+        /*[in]*/ short LoHiThresh,
+        /*[in]*/ short LoHiPOP,
+        /*[in]*/ short MediumThresh,
+        /*[in]*/ short MediumPOP,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetGainSwitchParams (
+        /*[out]*/ short * HiLoThresh,
+        /*[out]*/ short * HiLoPOP,
+        /*[out]*/ short * LoHiThresh,
+        /*[out]*/ short * LoHiPOP,
+        /*[out]*/ short * MediumThresh,
+        /*[out]*/ short * MediumPOP,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetBadPixelNew (
+        /*[in]*/ short row,
+        /*[in]*/ short column,
+        /*[in]*/ short pixelValue,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_CalculateFrameDiff (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_CalculateGainFrame (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_FindBadPixels (
+        enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetBaudRate (
+        /*[out]*/ short * baudRate,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetBaudRate (
+        /*[in]*/ short baudRate,
+        enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_WriteGainTableNew (
+        /*[in]*/ short gainTableType,
+        /*[in]*/ short tableNum,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_CalculateGain (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetFlashStatus (
+        /*[out]*/ short * status,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetNonVolatileFFCAddress (
+        /*[in]*/ short lensNumber,
+        /*[out]*/ unsigned long * address,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+};
+
+struct __declspec(uuid("eeaf0d99-4e9f-4f2b-94a5-36bada326116"))
+PhotonCam;
+    // [ default ] interface IPhotonCam
+    // [ default, source ] dispinterface _IPhotonEvents
+
+enum AGCAlgorithm
+{
+    PLATEAU_AGC = 0,
+    ONCE_BRIGHT_AGC = 1,
+    AUTO_BRIGHT_AGC = 2,
+    MANUAL_AGC = 3,
+    PSEUDO_GAIN_AGC = 4,
+    AUTO_LINEAR_AGC = 5,
+    LOG_AGC = 6,
+    HIST_SPEC_AGC = 7
+};
+
+enum FPATempMode
+{
+    FPA_TENTHS_DEG_C = 0,
+    FPA_RAW_COUNTS = 1
+};
+
+enum Options
+{
+    OPT_MASK_EXTENDED_TEMP = 1,
+    OPT_MASK_AUTO_GAIN = 2,
+    OPT_MASK_DIGITAL_OUT = 4,
+    OPT_MASK_SPOTMETER = 8,
+    OPT_MASK_ISOTHERM = 16,
+    OPT_MASK_TORSION_SHUTTER = 32,
+    OPT_MASK_HEATER_CONTROL = 64,
+    OPT_MASK_HIDE_LOGO = 128,
+    OPT_MASK_LOCK_ZOOM = 256,
+    OPT_MASK_LOCK_AGC = 512,
+    OPT_MASK_LIMIT_AGC = 1024,
+    OPT_MASK_SNAPSHOT = 2048,
+    OPT_MASK_LOCK_SPLASH = 4096,
+    OPT_MASK_UNIFIED_OFFSET = 8192,
+    OPT_MASK_SBNUC = 16384,
+    OPT_MASK_TERMINATION = 32768
+};
+
+enum FFCMode
+{
+    MANUAL_FFC = 0,
+    AUTO_FFC = 1,
+    EXTERNAL_FFC = 2
+};
+
+enum ShutterPosition
+{
+    SHUTTER_PROFILE = -32768,
+    SHUTTER_UNKNOWN = -1,
+    SHUTTER_OPEN = 0,
+    SHUTTER_CLOSED = 1
+};
+
+enum IsothermMode
+{
+    ISOTHERM_OFF = 0,
+    ISOTHERM_ON = 1
+};
+
+enum IsothermThresholdType
+{
+    ISOTHERM_PERCENTAGE = 0,
+    ISOTHERM_CELSIUS = 1
+};
+
+enum GainMode
+{
+    AUTO_GAIN_MODE = 0,
+    LOW_GAIN_MODE = 1,
+    HIGH_GAIN_MODE = 2,
+    MANUAL_GAIN_MODE = 3
+};
+
+enum SpotDisplay
+{
+    SPOT_DISPLAY_OFF = 0,
+    SPOT_MASK_DIGITAL = 1,
+    SPOT_MASK_THERMOMETER = 2,
+    SPOT_MASK_DIGI_THERM = 3
+};
+
+enum SpotMeterMode
+{
+    SPOT_METER_OFF = 0,
+    SPOT_METER_ON_FAHRENHEIT = 1,
+    SPOT_METER_ON_CELSIUS = 2
+};
+
+enum DigitalOut
+{
+    DIGITAL_14BIT = 0,
+    DIGITAL_8BIT = 1,
+    DIGITAL_OFF = 2,
+    DIGITAL_14BIT_UNFILTERED = 3,
+    DIGITAL_8BIT_INV = 4,
+    DIGITAL_14BIT_INV = 5,
+    DIGITAL_14BIT_INV_UNFILTERED = 6,
+    DIGITAL_GET_WINDOW = 256,
+    DIGITAL_FPA_DIMENSIONS = 257,
+    GET_XPBUS_MODE = 512,
+    SET_XPBUS_MODE = 768,
+    GET_LVDS_MODE = 1024,
+    SET_LVDS_MODE = 1280,
+    SET_CMOS_MODE_BIT_DEPTH = 1536,
+    SET_LVDS_MODE_BIT_DEPTH = 1792,
+    GET_CMOS_MODE_BIT_DEPTH = 2048,
+    GET_LVDS_MODE_BIT_DEPTH = 2304
+};
+
+enum ExtSyncMode
+{
+    EXT_SYNC_DISABLED = 0,
+    EXT_SYNC_SLAVE = 1,
+    EXT_SYNC_MASTER = 2
+};
+
+enum TestPattern
+{
+    NO_TEST_PATTERN = 0,
+    ASCENDING_RAMP_TEST_PATTERN = 1,
+    VERT_SHADE_TEST_PATTERN = 2,
+    BIG_VERT_SHADE_TEST_PATTERN = 3,
+    HORZ_LINE_TEST_PATTERN = 4,
+    NO_SMOOTHING_TEST_PATTERN = 5,
+    COLOR_TEST_PATTERN = 6,
+    STEPS_TEST_PATTERN = 8,
+    GET_RAMP_PARAMS = 256
+};
+
+enum ImageOrientation
+{
+    IMAGE_UNKNOWN = -1,
+    IMAGE_NORMAL = 0,
+    IMAGE_INVERT = 1,
+    IMAGE_REVERT = 2,
+    IMAGE_INVERT_REVERT = 3
+};
+
+enum ColorLut
+{
+    WHITE_HOT_LUT = 0,
+    BLACK_HOT_LUT = 1,
+    FUSION_LUT = 2,
+    RAINBOW_LUT = 3,
+    GLOBOW_LUT = 4,
+    IRONBOW1_LUT = 5,
+    IRONBOW2_LUT = 6,
+    SEPIA_LUT = 7,
+    COLOR1_LUT = 8,
+    COLOR2_LUT = 9,
+    ICEFIRE_LUT = 10,
+    RAIN_LUT = 11,
+    COLOR12_LUT = 12,
+    COLOR13_LUT = 13,
+    COLOR14_LUT = 14,
+    COLOR15_LUT = 15,
+    IMAGE_LUTS = 16,
+    SPLASH_LUT = 31,
+    NUM_COLOR_LUTS = 32
+};
+
+enum VideoMode
+{
+    VIDEO_REAL_TIME = 0,
+    VIDEO_ENABLED = 0,
+    VIDEO_UNZOOM = 0,
+    VIDEO_FROZEN = 1,
+    VIDEO_DISABLED = 2,
+    VIDEO_ZOOM = 4,
+    VIDEO_4XZOOM = 8,
+    VIDEO_8XZOOM = 16,
+    VIDEO_TOGGLE = 256
+};
+
+enum VideoStandard
+{
+    VIDEO_RS_170 = 0,
+    VIDEO_STD_PAL = 1,
+    VIDEO_NTSC_AVG_ENABLED_30HZ = 0,
+    VIDEO_PAL_AVG_ENABLED_25HZ = 1,
+    VIDEO_NTSC_AVG_DISABLED_30HZ = 2,
+    VIDEO_PAL_AVG_DISABLED_25HZ = 3,
+    VIDEO_NTSC_AVG_BYPASSED_60HZ = 4,
+    VIDEO_PAL_AVG_BYPASSED_50HZ = 5
+};
+
+enum ExtOffsetState
+{
+    EXTOFFSET_OFF = 0,
+    EXTOFFSET_ON = 1
+};
+
+enum VideoColor
+{
+    VIDEO_COLOR_OFF = 0,
+    VIDEO_COLOR_ON = 1,
+    VIDEO_COLOR_OFF_LUT = 2
+};
+
+struct __declspec(uuid("cdfe77e2-4ee0-4d36-9019-126be77a5d96"))
+IPhotonCam : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    enum Result GetAGCFilterValue (
+        short * value );
+    enum Result SetAGCFilterValue (
+        short value );
+    enum Result GetAGCMean (
+        short * mean );
+    enum Result GetAGCROI (
+        short * left,
+        short * top,
+        short * right,
+        short * bottom );
+    enum Result SetAGCROI (
+        short left,
+        short top,
+        short right,
+        short bottom );
+    enum Result GetAGCType (
+        enum AGCAlgorithm * agcType );
+    enum Result SetAGCType (
+        enum AGCAlgorithm agcType );
+    enum Result GetBrightness (
+        short * brightness );
+    enum Result SetBrightness (
+        short brightness );
+    enum Result GetBrightnessBias (
+        short * bias );
+    enum Result SetBrightnessBias (
+        short bias );
+    enum Result GetContrast (
+        short * contrast );
+    enum Result SetContrast (
+        short contrast );
+    enum Result GetITTMidpoint (
+        short * midpoint );
+    enum Result SetITTMidpoint (
+        short midpoint );
+    enum Result GetMaxAGCGain (
+        short * value );
+    enum Result SetMaxAGCGain (
+        short value );
+    enum Result GetPlateauValue (
+        short * value );
+    enum Result SetPlateauValue (
+        short value );
+    enum Result DoNoOp ( );
+    enum Result DoReset ( );
+    enum Result GetFPATemp (
+        enum FPATempMode mode,
+        short * temp );
+    enum Result GetRevision (
+        long * swVersion,
+        long * fwVersion );
+    enum Result GetOptions (
+        enum Options * Options );
+    enum Result RestoreFactoryDefaults ( );
+    enum Result GetSerialNum (
+        long * serialNum );
+    enum Result SetPowerUpDefaults ( );
+    enum Result GetPartNumber (
+        BSTR * partNumber );
+    enum Result DoFFC ( );
+    enum Result GetFFCMeanValue (
+        short * value );
+    enum Result SetFFCMeanValue (
+        short value );
+    enum Result GetFFCMode (
+        enum FFCMode * FFCMode );
+    enum Result SetFFCMode (
+        enum FFCMode FFCMode );
+    enum Result GetFFCPeriod (
+        short * ffcPeriod );
+    enum Result SetFFCPeriod (
+        short ffcPeriod );
+    enum Result GetFFCTempDelta (
+        short * ffcTempDelta );
+    enum Result SetFFCTempDelta (
+        short ffcTempDelta );
+    enum Result GetFFCWarnTime (
+        short * time );
+    enum Result SetFFCWarnTime (
+        short time );
+    enum Result GetShutterPosition (
+        enum ShutterPosition * position );
+    enum Result SetShutterPosition (
+        enum ShutterPosition position );
+    enum Result GetIsothermMode (
+        enum IsothermMode * mode );
+    enum Result SetIsothermMode (
+        enum IsothermMode mode );
+    enum Result GetIsothermThresholds (
+        enum IsothermThresholdType * isoType,
+        short * lowerThreshold,
+        short * upperThreshold );
+    enum Result SetIsothermThresholds (
+        enum IsothermThresholdType isoType,
+        short lowerThreshold,
+        short upperThreshold );
+    enum Result GetGainMode (
+        enum GainMode * GainMode );
+    enum Result SetGainMode (
+        enum GainMode GainMode );
+    enum Result GetSpotTemp (
+        short * temp );
+    enum Result GetSpotDisplay (
+        enum SpotDisplay * display );
+    enum Result SetSpotDisplay (
+        enum SpotDisplay display );
+    enum Result GetSpotMeterMode (
+        enum SpotMeterMode * mode );
+    enum Result SetSpotMeterMode (
+        enum SpotMeterMode mode );
+    enum Result GetDigitalOut (
+        enum DigitalOut * digitalOutput );
+    enum Result SetDigitalOut (
+        enum DigitalOut digitalOutput );
+    enum Result GetSyncMode (
+        enum ExtSyncMode * mode );
+    enum Result SetSyncMode (
+        enum ExtSyncMode mode );
+    enum Result GetTestPattern (
+        enum TestPattern * pattern );
+    enum Result SetTestPattern (
+        enum TestPattern pattern );
+    enum Result GetOrientation (
+        enum ImageOrientation * ImageOrientation );
+    enum Result SetOrientation (
+        enum ImageOrientation ImageOrientation );
+    enum Result GetPanTilt (
+        short * x,
+        short * y );
+    enum Result SetPanTilt (
+        short x,
+        short y );
+    enum Result GetVideoLUT (
+        enum ColorLut * lut );
+    enum Result SetVideoLUT (
+        enum ColorLut lut );
+    enum Result GetVideoMode (
+        enum VideoMode * VideoMode );
+    enum Result SetVideoMode (
+        enum VideoMode VideoMode );
+    enum Result GetDDEGain (
+        short * gain );
+    enum Result SetDDEGain (
+        short gain );
+    enum Result GetDDEThreshold (
+        short * threshold );
+    enum Result SetDDEThreshold (
+        short threshold );
+    enum Result GetDDESpatialThreshold (
+        short * threshold );
+    enum Result SetDDESpatialThreshold (
+        short threshold );
+    long GetErrorString (
+        enum Result errorCode,
+        BSTR * s );
+    enum Result StartSplashScreenDownload (
+        LPSTR filename );
+    enum Result StartUpgradeCamera (
+        LPSTR filename );
+    HRESULT CancelAsyncFunction ( );
+    enum Result OpenComm (
+        _bstr_t device );
+    enum Result CloseComm ( );
+    enum Result GetComm (
+        int index,
+        BSTR * device );
+    enum Result GetDigitalWindow (
+        short * left,
+        short * top,
+        short * right,
+        short * bottom );
+    enum Result GetDynamicDDE (
+        short * value );
+    enum Result SetDynamicDDE (
+        short value );
+    enum Result GetDDEState (
+        short * ddeState );
+    enum Result SetDDEState (
+        short ddeState );
+    enum Result GetProductId (
+        short * productId );
+    enum Result GetVideoModeNew (
+        enum VideoMode * VideoMode );
+    enum Result SetVideoModeNew (
+        enum VideoMode VideoMode );
+    enum Result GetGainSwitchParams (
+        short * HiLoThresh,
+        short * HiLoPOP,
+        short * LoHiThresh,
+        short * LoHiPOP );
+    enum Result SetGainSwitchParams (
+        short HiLoThresh,
+        short HiLoPOP,
+        short LoHiThresh,
+        short LoHiPOP );
+    enum Result GetVideoStandard (
+        enum VideoStandard * standard );
+    enum Result SetVideoStandard (
+        enum VideoStandard standard );
+    enum Result DownloadFile (
+        LPSTR filename,
+        long offset );
+    enum Result EraseFlashBlock (
+        short blockNumber );
+    enum Result ReadMemory (
+        long addr,
+        short byteCount,
+        unsigned char * data );
+    enum Result WriteMemory (
+        long addr,
+        short byteCount,
+        unsigned char * data );
+    enum Result GetCorrectionMask (
+        short * correctionMask );
+    enum Result SetCorrectionMask (
+        short correctionMask );
+    enum Result GetExtOffsetState (
+        enum ExtOffsetState * state );
+    enum Result SetExtOffsetState (
+        enum ExtOffsetState state );
+    enum Result GetSDKDeviceId (
+        int * pDeviceId );
+    enum Result GetVideoColor (
+        enum VideoColor * color );
+    enum Result SetVideoColor (
+        enum VideoColor color );
+    enum Result GetAnalogVideoOnOff (
+        enum VideoMode * state );
+    enum Result SetAnalogVideoOnOff (
+        enum VideoMode state );
+    enum Result GetZoomMode (
+        enum VideoMode * zoomMode );
+    enum Result SetZoomMode (
+        enum VideoMode zoomMode );
+    enum Result GetFreezeMode (
+        enum VideoMode * freezeMode );
+    enum Result SetFreezeMode (
+        enum VideoMode freezeMode );
+    enum Result CalcSupplementalOffset ( );
+    enum Result WriteSupplementalOffset ( );
+    enum Result CaptureFrames (
+        short captureBuffer );
+    enum Result SetParameters (
+        int functionId,
+        int byteCount,
+        short * buffer );
+    enum Result GetParameters (
+        int functionId,
+        int byteCount,
+        short * buffer );
+    enum Result SetSplashNumber (
+        int splashNumber );
+    enum Result SetSplash1Delay (
+        int delay );
+    enum Result SetSplash2Delay (
+        int delay );
+    enum Result SetFFCTempDeltas (
+        short ffcTempDelta,
+        short ffcTempDeltaLoGain );
+    enum Result GetFFCTempDeltas (
+        short * ffcTempDelta,
+        short * ffcTempDeltaLoGain );
+    enum Result SetFFCPeriods (
+        short ffcPeriod,
+        short ffcPeriodLowGain );
+    enum Result GetFFCPeriods (
+        short * ffcPeriod,
+        short * ffcPeriodLowGain );
+    enum Result GetLibraryVersion (
+        unsigned short * major,
+        unsigned short * minor,
+        unsigned short * revision,
+        unsigned short * build );
+    enum Result SetParamsWithTimeout (
+        int functionId,
+        int byteCount,
+        short * buffer,
+        int timeout );
+    enum Result GetParamsWithTimeout (
+        int functionId,
+        int byteCount,
+        short * buffer,
+        int timeout );
+    enum Result GetFPAExtents (
+        short * fpaCols,
+        short * fpaRows,
+        short * blindRows );
+    enum Result SetBasketBoardCommDestId (
+        enum CalDestinationId destinationId );
+    enum Result SetBasketBoardSubslotId (
+        int subSlotId );
+    enum Result SetComTimeout (
+        int timeoutInMsecs );
+    enum Result GetComTimeout (
+        int * timeoutInMsecs );
+    enum Result GetBasketBoardCommDestId (
+        enum CalDestinationId * destinationId );
+    enum Result GetBasketBoardSubSlotId (
+        int * subSlotId );
+    enum Result SetSDKDeviceId (
+        int deviceId );
+    enum Result SetFourUpMode (
+        int IsFourUp );
+    enum Result GetFourUpMode (
+        int * IsFourUp );
+    enum Result SetCommRetries (
+        int numOfRetries );
+    enum Result GetCommRetries (
+        int * numOfRetries );
+    enum Result SetThreeIsothermThresholds (
+        enum IsothermThresholdType isoType,
+        short lowerThreshold,
+        short midThreshold,
+        short upperThreshold );
+    enum Result GetThreeIsothermThresholds (
+        enum IsothermThresholdType * isoType,
+        short * lowerThreshold,
+        short * midThreshold,
+        short * upperThreshold );
+    enum Result SetOptions (
+        enum Options Options );
+    enum Result LoadNucTable (
+        short tableNum );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_GetAGCFilterValue (
+        /*[out]*/ short * value,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetAGCFilterValue (
+        /*[in]*/ short value,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetAGCMean (
+        /*[out]*/ short * mean,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetAGCROI (
+        /*[out]*/ short * left,
+        /*[out]*/ short * top,
+        /*[out]*/ short * right,
+        /*[out]*/ short * bottom,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetAGCROI (
+        /*[in]*/ short left,
+        /*[in]*/ short top,
+        /*[in]*/ short right,
+        /*[in]*/ short bottom,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetAGCType (
+        /*[out]*/ enum AGCAlgorithm * agcType,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetAGCType (
+        /*[in]*/ enum AGCAlgorithm agcType,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetBrightness (
+        /*[out]*/ short * brightness,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetBrightness (
+        /*[in]*/ short brightness,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetBrightnessBias (
+        /*[out]*/ short * bias,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetBrightnessBias (
+        /*[in]*/ short bias,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetContrast (
+        /*[out]*/ short * contrast,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetContrast (
+        /*[in]*/ short contrast,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetITTMidpoint (
+        /*[out]*/ short * midpoint,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetITTMidpoint (
+        /*[in]*/ short midpoint,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetMaxAGCGain (
+        /*[out]*/ short * value,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetMaxAGCGain (
+        /*[in]*/ short value,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetPlateauValue (
+        /*[out]*/ short * value,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetPlateauValue (
+        /*[in]*/ short value,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_DoNoOp (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_DoReset (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetFPATemp (
+        /*[in]*/ enum FPATempMode mode,
+        /*[out]*/ short * temp,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetRevision (
+        /*[out]*/ long * swVersion,
+        /*[out]*/ long * fwVersion,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetOptions (
+        /*[out]*/ enum Options * Options,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_RestoreFactoryDefaults (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetSerialNum (
+        /*[out]*/ long * serialNum,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetPowerUpDefaults (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetPartNumber (
+        /*[out]*/ BSTR * partNumber,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_DoFFC (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetFFCMeanValue (
+        /*[out]*/ short * value,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetFFCMeanValue (
+        /*[in]*/ short value,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetFFCMode (
+        /*[out]*/ enum FFCMode * FFCMode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetFFCMode (
+        /*[in]*/ enum FFCMode FFCMode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetFFCPeriod (
+        /*[out]*/ short * ffcPeriod,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetFFCPeriod (
+        /*[in]*/ short ffcPeriod,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetFFCTempDelta (
+        /*[out]*/ short * ffcTempDelta,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetFFCTempDelta (
+        /*[in]*/ short ffcTempDelta,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetFFCWarnTime (
+        /*[out]*/ short * time,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetFFCWarnTime (
+        /*[in]*/ short time,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetShutterPosition (
+        /*[out]*/ enum ShutterPosition * position,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetShutterPosition (
+        /*[in]*/ enum ShutterPosition position,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetIsothermMode (
+        /*[out]*/ enum IsothermMode * mode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetIsothermMode (
+        /*[in]*/ enum IsothermMode mode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetIsothermThresholds (
+        /*[out]*/ enum IsothermThresholdType * isoType,
+        /*[out]*/ short * lowerThreshold,
+        /*[out]*/ short * upperThreshold,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetIsothermThresholds (
+        /*[in]*/ enum IsothermThresholdType isoType,
+        /*[in]*/ short lowerThreshold,
+        /*[in]*/ short upperThreshold,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetGainMode (
+        /*[out]*/ enum GainMode * GainMode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetGainMode (
+        /*[in]*/ enum GainMode GainMode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetSpotTemp (
+        /*[out]*/ short * temp,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetSpotDisplay (
+        /*[out]*/ enum SpotDisplay * display,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetSpotDisplay (
+        /*[in]*/ enum SpotDisplay display,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetSpotMeterMode (
+        /*[out]*/ enum SpotMeterMode * mode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetSpotMeterMode (
+        /*[in]*/ enum SpotMeterMode mode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetDigitalOut (
+        /*[out]*/ enum DigitalOut * digitalOutput,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetDigitalOut (
+        /*[in]*/ enum DigitalOut digitalOutput,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetSyncMode (
+        /*[out]*/ enum ExtSyncMode * mode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetSyncMode (
+        /*[in]*/ enum ExtSyncMode mode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetTestPattern (
+        /*[out]*/ enum TestPattern * pattern,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetTestPattern (
+        /*[in]*/ enum TestPattern pattern,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetOrientation (
+        /*[out]*/ enum ImageOrientation * ImageOrientation,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetOrientation (
+        /*[in]*/ enum ImageOrientation ImageOrientation,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetPanTilt (
+        /*[out]*/ short * x,
+        /*[out]*/ short * y,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetPanTilt (
+        /*[in]*/ short x,
+        /*[in]*/ short y,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetVideoLUT (
+        /*[out]*/ enum ColorLut * lut,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetVideoLUT (
+        /*[in]*/ enum ColorLut lut,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetVideoMode (
+        /*[out]*/ enum VideoMode * VideoMode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetVideoMode (
+        /*[in]*/ enum VideoMode VideoMode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetDDEGain (
+        /*[out]*/ short * gain,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetDDEGain (
+        /*[in]*/ short gain,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetDDEThreshold (
+        /*[out]*/ short * threshold,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetDDEThreshold (
+        /*[in]*/ short threshold,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetDDESpatialThreshold (
+        /*[out]*/ short * threshold,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetDDESpatialThreshold (
+        /*[in]*/ short threshold,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetErrorString (
+        /*[in]*/ enum Result errorCode,
+        /*[out]*/ BSTR * s,
+        /*[out,retval]*/ long * Result ) = 0;
+      virtual HRESULT __stdcall raw_StartSplashScreenDownload (
+        /*[in]*/ LPSTR filename,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_StartUpgradeCamera (
+        /*[in]*/ LPSTR filename,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_CancelAsyncFunction ( ) = 0;
+      virtual HRESULT __stdcall raw_OpenComm (
+        /*[in]*/ BSTR device,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_CloseComm (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetComm (
+        /*[in]*/ int index,
+        /*[out]*/ BSTR * device,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetDigitalWindow (
+        /*[out]*/ short * left,
+        /*[out]*/ short * top,
+        /*[out]*/ short * right,
+        /*[out]*/ short * bottom,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetDynamicDDE (
+        /*[out]*/ short * value,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetDynamicDDE (
+        /*[in]*/ short value,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetDDEState (
+        /*[out]*/ short * ddeState,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetDDEState (
+        /*[in]*/ short ddeState,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetProductId (
+        /*[out]*/ short * productId,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetVideoModeNew (
+        /*[out]*/ enum VideoMode * VideoMode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetVideoModeNew (
+        /*[in]*/ enum VideoMode VideoMode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetGainSwitchParams (
+        /*[out]*/ short * HiLoThresh,
+        /*[out]*/ short * HiLoPOP,
+        /*[out]*/ short * LoHiThresh,
+        /*[out]*/ short * LoHiPOP,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetGainSwitchParams (
+        /*[in]*/ short HiLoThresh,
+        /*[in]*/ short HiLoPOP,
+        /*[in]*/ short LoHiThresh,
+        /*[in]*/ short LoHiPOP,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetVideoStandard (
+        /*[out]*/ enum VideoStandard * standard,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetVideoStandard (
+        /*[in]*/ enum VideoStandard standard,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_DownloadFile (
+        /*[in]*/ LPSTR filename,
+        /*[in]*/ long offset,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_EraseFlashBlock (
+        /*[in]*/ short blockNumber,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_ReadMemory (
+        /*[in]*/ long addr,
+        /*[in]*/ short byteCount,
+        /*[out]*/ unsigned char * data,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_WriteMemory (
+        /*[in]*/ long addr,
+        /*[in]*/ short byteCount,
+        /*[in]*/ unsigned char * data,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetCorrectionMask (
+        /*[out]*/ short * correctionMask,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetCorrectionMask (
+        /*[in]*/ short correctionMask,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetExtOffsetState (
+        /*[out]*/ enum ExtOffsetState * state,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetExtOffsetState (
+        /*[in]*/ enum ExtOffsetState state,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetSDKDeviceId (
+        /*[out]*/ int * pDeviceId,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetVideoColor (
+        /*[out]*/ enum VideoColor * color,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetVideoColor (
+        /*[in]*/ enum VideoColor color,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetAnalogVideoOnOff (
+        /*[out]*/ enum VideoMode * state,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetAnalogVideoOnOff (
+        /*[in]*/ enum VideoMode state,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetZoomMode (
+        /*[out]*/ enum VideoMode * zoomMode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetZoomMode (
+        /*[in]*/ enum VideoMode zoomMode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetFreezeMode (
+        /*[out]*/ enum VideoMode * freezeMode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetFreezeMode (
+        /*[in]*/ enum VideoMode freezeMode,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_CalcSupplementalOffset (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_WriteSupplementalOffset (
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_CaptureFrames (
+        /*[in]*/ short captureBuffer,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetParameters (
+        /*[in]*/ int functionId,
+        /*[in]*/ int byteCount,
+        /*[in,out]*/ short * buffer,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetParameters (
+        /*[in]*/ int functionId,
+        /*[in]*/ int byteCount,
+        /*[in,out]*/ short * buffer,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetSplashNumber (
+        /*[in]*/ int splashNumber,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetSplash1Delay (
+        /*[in]*/ int delay,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetSplash2Delay (
+        /*[in]*/ int delay,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetFFCTempDeltas (
+        /*[in]*/ short ffcTempDelta,
+        /*[in]*/ short ffcTempDeltaLoGain,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetFFCTempDeltas (
+        /*[out]*/ short * ffcTempDelta,
+        /*[out]*/ short * ffcTempDeltaLoGain,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetFFCPeriods (
+        /*[in]*/ short ffcPeriod,
+        /*[in]*/ short ffcPeriodLowGain,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetFFCPeriods (
+        /*[out]*/ short * ffcPeriod,
+        /*[out]*/ short * ffcPeriodLowGain,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetLibraryVersion (
+        /*[out]*/ unsigned short * major,
+        /*[out]*/ unsigned short * minor,
+        /*[out]*/ unsigned short * revision,
+        /*[out]*/ unsigned short * build,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetParamsWithTimeout (
+        /*[in]*/ int functionId,
+        /*[in]*/ int byteCount,
+        /*[in,out]*/ short * buffer,
+        /*[in]*/ int timeout,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetParamsWithTimeout (
+        /*[in]*/ int functionId,
+        /*[in]*/ int byteCount,
+        /*[in,out]*/ short * buffer,
+        /*[in]*/ int timeout,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetFPAExtents (
+        /*[out]*/ short * fpaCols,
+        /*[out]*/ short * fpaRows,
+        /*[out]*/ short * blindRows,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetBasketBoardCommDestId (
+        /*[in]*/ enum CalDestinationId destinationId,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetBasketBoardSubslotId (
+        /*[in]*/ int subSlotId,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetComTimeout (
+        /*[in]*/ int timeoutInMsecs,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetComTimeout (
+        /*[out]*/ int * timeoutInMsecs,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetBasketBoardCommDestId (
+        /*[out]*/ enum CalDestinationId * destinationId,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetBasketBoardSubSlotId (
+        /*[out]*/ int * subSlotId,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetSDKDeviceId (
+        /*[in]*/ int deviceId,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetFourUpMode (
+        /*[in]*/ int IsFourUp,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetFourUpMode (
+        /*[out]*/ int * IsFourUp,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetCommRetries (
+        /*[in]*/ int numOfRetries,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetCommRetries (
+        /*[out]*/ int * numOfRetries,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetThreeIsothermThresholds (
+        /*[in]*/ enum IsothermThresholdType isoType,
+        /*[in]*/ short lowerThreshold,
+        /*[in]*/ short midThreshold,
+        /*[in]*/ short upperThreshold,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_GetThreeIsothermThresholds (
+        /*[out]*/ enum IsothermThresholdType * isoType,
+        /*[out]*/ short * lowerThreshold,
+        /*[out]*/ short * midThreshold,
+        /*[out]*/ short * upperThreshold,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_SetOptions (
+        /*[in]*/ enum Options Options,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+      virtual HRESULT __stdcall raw_LoadNucTable (
+        /*[in]*/ short tableNum,
+        /*[out,retval]*/ enum Result * Result ) = 0;
+};
+
+struct __declspec(uuid("72a91b19-e4b8-4072-93d1-c8bdffb28904"))
+Spectare;
+    // [ default ] interface ISpectare
+
+struct __declspec(uuid("7657347f-6d34-4443-92cf-e9da4f8b9b5f"))
+_ITauEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT ProgressStep (
+        _bstr_t step );
+    HRESULT ProgressPercentage (
+        int exitCode );
+    HRESULT ExitStatus (
+        int exitCode );
+};
+
+struct __declspec(uuid("4f04f57f-df0c-4390-bdb0-d4d69372d341"))
+Tau;
+    // [ default ] interface ITau
+    // [ default, source ] dispinterface _ITauEvents
+
+//
+// Wrapper method implementations
+//
+
+#include "d:\program\testfilr\testfilr\debug\photonsdk.tli"
+
+} // namespace Photon
+
+#pragma pack(pop)

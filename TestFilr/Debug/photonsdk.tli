@@ -1,0 +1,1811 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 12.00.21005.1 (f3352eaf).
+//
+// d:\program\testfilr\testfilr\debug\photonsdk.tli
+//
+// Wrapper implementations for Win32 type library photonSDK.dll
+// compiler-generated file created 02/26/16 at 13:22:25 - DO NOT EDIT!
+
+#pragma once
+
+//
+// dispinterface _IPhotonEvents wrapper method implementations
+//
+
+inline HRESULT _IPhotonEvents::ProgressStep ( _bstr_t step ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0008", (BSTR)step);
+}
+
+inline HRESULT _IPhotonEvents::ProgressPercentage ( int percentage ) {
+    return _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0003", percentage);
+}
+
+inline HRESULT _IPhotonEvents::ExitStatus ( int exitCode ) {
+    return _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0003", exitCode);
+}
+
+//
+// interface ISpectare wrapper method implementations
+//
+
+inline enum Result ISpectare::SetIntegrationTime ( float integrationTimeMS ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetIntegrationTime(integrationTimeMS, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetIntegrationTime ( float * integrationTimeMS ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetIntegrationTime(integrationTimeMS, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetSDKDeviceId ( int deviceId ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetSDKDeviceId(deviceId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetFrameRate ( float * frameRateHz ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetFrameRate(frameRateHz, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetFrameRate ( float frameRateHz ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetFrameRate(frameRateHz, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetElapsedTime ( int * timeSec ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetElapsedTime(timeSec, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetDACVoltage ( int channel, int valuemV ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetDACVoltage(channel, valuemV, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::CalculateGain ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_CalculateGain(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetIntegrationMode ( int * intMode ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetIntegrationMode(intMode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetIntegrationMode ( int intMode ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetIntegrationMode(intMode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetCalStatus ( short * status ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetCalStatus(status, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetCorrectionMask ( short * correctionMask ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetCorrectionMask(correctionMask, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetCorrectionMask ( short correctionMask ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetCorrectionMask(correctionMask, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetCoolerTemp ( double * tempInKelvin ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetCoolerTemp(tempInKelvin, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetLensRevision ( BSTR * revString ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetLensRevision(revString, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetLensPosition ( short zoomPosition, short focusPosition, short movementMode ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetLensPosition(zoomPosition, focusPosition, movementMode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetLensUptimeHours ( short * upTimeHours ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetLensUptimeHours(upTimeHours, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetLensStatus ( short * status ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetLensStatus(status, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetLensCurrentFOV ( short * fovIndex ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetLensCurrentFOV(fovIndex, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetLensBitStatus ( short * status ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetLensBitStatus(status, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetLensFOVIndex ( short fov, short infinityFlag ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetLensFOVIndex(fov, infinityFlag, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::LensStartZoomIn ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_LensStartZoomIn(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::LensStartZoomOut ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_LensStartZoomOut(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::LensStopZoom ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_LensStopZoom(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::LensStartFocusIn ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_LensStartFocusIn(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::LensStartFocusOut ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_LensStartFocusOut(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::LensStopFocus ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_LensStopFocus(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetLensTemperature ( short * lensTemp ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetLensTemperature(lensTemp, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetMaxPixelLimit ( short * maxPixelLimit ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetMaxPixelLimit(maxPixelLimit, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetMinPixelLimit ( short * minPixelLimit ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetMinPixelLimit(minPixelLimit, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetMaxPixelLimit ( short maxPixelLimit ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetMaxPixelLimit(maxPixelLimit, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetMinPixelLimit ( short minPixelLimit ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetMinPixelLimit(minPixelLimit, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetBadPixelDetectionResults ( int * badPixelRange, int * badPixelGain ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetBadPixelDetectionResults(badPixelRange, badPixelGain, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetMaxPixelGain ( short * maxPixelGain ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetMaxPixelGain(maxPixelGain, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetMinPixelGain ( short * minPixelGain ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetMinPixelGain(minPixelGain, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetMaxPixelGain ( short maxPixelGain ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetMaxPixelGain(maxPixelGain, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetMinPixelGain ( short minPixelGain ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetMinPixelGain(minPixelGain, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetSceneMeanIntensity ( short * sceneMeanIntensity ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetSceneMeanIntensity(sceneMeanIntensity, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetLensBitRequest ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetLensBitRequest(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetAutoFocusEnable ( short * autoFocusEnable ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetAutoFocusEnable(autoFocusEnable, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetAutoFocusROI ( short * autoFocusRoi ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetAutoFocusROI(autoFocusRoi, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetAutoFocusMetricResult ( unsigned long * autoFocusMetricResult ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetAutoFocusMetricResult(autoFocusMetricResult, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetAutoFocusMetricThreshold ( unsigned long * autoFocusMetricThreshold ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetAutoFocusMetricThreshold(autoFocusMetricThreshold, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetAutoFocusEnable ( short autoFocusEnable ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetAutoFocusEnable(autoFocusEnable, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetAutoFocusROI ( short autoFocusRoi ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetAutoFocusROI(autoFocusRoi, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetAutoFocusMetricThreshold ( unsigned long autoFocusMetricThreshold ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetAutoFocusMetricThreshold(autoFocusMetricThreshold, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetAutoFocusBumpAmount ( short * autoFocusBumpAmount ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetAutoFocusBumpAmount(autoFocusBumpAmount, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetAutoFocusBumpAmount ( short autoFocusBumpAmount ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetAutoFocusBumpAmount(autoFocusBumpAmount, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetLensExtents ( short * zoomMinExtent, short * zoomMaxExtent, short * focusMinExtent, short * focusMaxExtent ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetLensExtents(zoomMinExtent, zoomMaxExtent, focusMinExtent, focusMaxExtent, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetLensPosition ( short * zoomPosition, short * focusPosition, short * movementMode ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetLensPosition(zoomPosition, focusPosition, movementMode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetFPAExtents ( short * fpaCols, short * fpaRows ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetFPAExtents(fpaCols, fpaRows, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetActiveNuc ( short * activeNuc ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetActiveNuc(activeNuc, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetActiveNuc ( short activeNuc ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetActiveNuc(activeNuc, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::GetPixelGain ( short row, short col, short * gain ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetPixelGain(row, col, gain, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::SetPixelGain ( short row, short col, short gain, short badPixelStatus ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetPixelGain(row, col, gain, badPixelStatus, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ISpectare::StartLensAutoFocus ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_StartLensAutoFocus(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface ITau wrapper method implementations
+//
+
+inline enum Result ITau::SetThermalthrottleButtonState ( enum ThermalThrottleButtonState buttonState, short * thermValue ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetThermalthrottleButtonState(buttonState, thermValue, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::SetSDKDeviceId ( int deviceId ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetSDKDeviceId(deviceId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::StartSplashScreenDownload ( LPSTR filename ) {
+    enum Result _result;
+    HRESULT _hr = raw_StartSplashScreenDownload(filename, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT ITau::CancelAsyncFunction ( ) {
+    HRESULT _hr = raw_CancelAsyncFunction();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline enum Result ITau::SetSplashNumber ( int splashNumber ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetSplashNumber(splashNumber, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::SetSplash1Delay ( int delay ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetSplash1Delay(delay, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::SetSplash2Delay ( int delay ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetSplash2Delay(delay, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::ReadScratchPad ( unsigned char * * scratchPad ) {
+    enum Result _result;
+    HRESULT _hr = raw_ReadScratchPad(scratchPad, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::WriteScratchPad ( unsigned char * * scratchPad ) {
+    enum Result _result;
+    HRESULT _hr = raw_WriteScratchPad(scratchPad, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::SetBatteryVoltageThresholds ( double VoltVidOff, double Volt10Percent, double Volt25Percent, double Volt50Percent, double Volt75Percent, double Volt100Percent ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetBatteryVoltageThresholds(VoltVidOff, Volt10Percent, Volt25Percent, Volt50Percent, Volt75Percent, Volt100Percent, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::WriteSymbols ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_WriteSymbols(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::GetBatteryVoltageThresholds ( double * VoltVidOff, double * Volt10Percent, double * Volt25Percent, double * Volt50Percent, double * Volt75Percent, double * Volt100Percent ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetBatteryVoltageThresholds(VoltVidOff, Volt10Percent, Volt25Percent, Volt50Percent, Volt75Percent, Volt100Percent, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::ReadImageCaptureLine ( unsigned long address, short width, long * addrIncr, short * * pixBuff ) {
+    enum Result _result;
+    HRESULT _hr = raw_ReadImageCaptureLine(address, width, addrIncr, pixBuff, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::GetFPAType ( short * fpaType ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetFPAType(fpaType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::SetFPAType ( short fpaType ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetFPAType(fpaType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::ClearSnapshots ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_ClearSnapshots(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::SetUserSymbolData ( short * symbolData, short symbolDataSize ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetUserSymbolData(symbolData, symbolDataSize, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::GetSnapshotAddress ( short nucIndex, unsigned long * address ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetSnapshotAddress(nucIndex, address, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::ReadRawSnapshotData ( unsigned long address, short byteCount, unsigned char * * line ) {
+    enum Result _result;
+    HRESULT _hr = raw_ReadRawSnapshotData(address, byteCount, line, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::ReadLutList ( short * lutCount ) {
+    enum Result _result;
+    HRESULT _hr = raw_ReadLutList(lutCount, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::GetLutTitle ( int index, BSTR * lutTitle ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetLutTitle(index, lutTitle, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::DownloadEncryptedFile ( _bstr_t filename, long offset ) {
+    enum Result _result;
+    HRESULT _hr = raw_DownloadEncryptedFile(filename, offset, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::EraseSplashScreen ( int splashScreenNumber ) {
+    enum Result _result;
+    HRESULT _hr = raw_EraseSplashScreen(splashScreenNumber, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::ReadMemory ( unsigned long addr, short byteCount, unsigned char * data ) {
+    enum Result _result;
+    HRESULT _hr = raw_ReadMemory(addr, byteCount, data, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::WriteMemory ( unsigned long addr, short byteCount, unsigned char * data ) {
+    enum Result _result;
+    HRESULT _hr = raw_WriteMemory(addr, byteCount, data, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::ReadDramNuc ( short nucIndex, short offsetHi, short offsetLo, short dataLen, unsigned char * data ) {
+    enum Result _result;
+    HRESULT _hr = raw_ReadDramNuc(nucIndex, offsetHi, offsetLo, dataLen, data, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::WriteDramNuc ( short nucIndex, short offsetHi, short offsetLo, short dataLen, unsigned char * data ) {
+    enum Result _result;
+    HRESULT _hr = raw_WriteDramNuc(nucIndex, offsetHi, offsetLo, dataLen, data, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::SetPixelGain ( short row, short column, short pixelValue ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetPixelGain(row, column, pixelValue, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::WriteGainTable ( short buffer ) {
+    enum Result _result;
+    HRESULT _hr = raw_WriteGainTable(buffer, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::SetBadPixel ( short row, short column, short BadGoodPixelFlag ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetBadPixel(row, column, BadGoodPixelFlag, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::GetLensNumber ( short * lensNumber ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetLensNumber(lensNumber, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::SetLensNumber ( short lensNumber ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetLensNumber(lensNumber, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::WriteFFCOffsetForLens ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_WriteFFCOffsetForLens(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::EraseFFCOffsetForCurrentLens ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_EraseFFCOffsetForCurrentLens(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::SetExtOffsetTempThresholds ( short ROCZero, short ROCEighth, short ROCQuarter, short ROCThreeEighth, short ROCHalf, short ROCFiveEighth, short ROCThreeFourth, short ROCSevenEighth ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetExtOffsetTempThresholds(ROCZero, ROCEighth, ROCQuarter, ROCThreeEighth, ROCHalf, ROCFiveEighth, ROCThreeFourth, ROCSevenEighth, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::GetExtOffsetTempThresholds ( short * ROCZero, short * ROCEighth, short * ROCQuarter, short * ROCThreeEighth, short * ROCHalf, short * ROCFiveEighth, short * ROCThreeFourth, short * ROCSevenEighth ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetExtOffsetTempThresholds(ROCZero, ROCEighth, ROCQuarter, ROCThreeEighth, ROCHalf, ROCFiveEighth, ROCThreeFourth, ROCSevenEighth, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::SetBasketBoardCommDestId ( enum CalDestinationId destinationId ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetBasketBoardCommDestId(destinationId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::GetBasketBoardCommDestId ( enum CalDestinationId * destinationId ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetBasketBoardCommDestId(destinationId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::SetBasketBoardSubslotId ( int subSlotId ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetBasketBoardSubslotId(subSlotId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::GetBasketBoardSubSlotId ( int * subSlotId ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetBasketBoardSubSlotId(subSlotId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::SetFourUpMode ( int IsFourUp ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetFourUpMode(IsFourUp, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::GetFourUpMode ( int * IsFourUp ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetFourUpMode(IsFourUp, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::SetCommRetries ( int numOfRetries ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetCommRetries(numOfRetries, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::GetCommRetries ( int * numOfRetries ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetCommRetries(numOfRetries, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::SetGainSwitchParams ( short HiLoThresh, short HiLoPOP, short LoHiThresh, short LoHiPOP, short MediumThresh, short MediumPOP ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetGainSwitchParams(HiLoThresh, HiLoPOP, LoHiThresh, LoHiPOP, MediumThresh, MediumPOP, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::GetGainSwitchParams ( short * HiLoThresh, short * HiLoPOP, short * LoHiThresh, short * LoHiPOP, short * MediumThresh, short * MediumPOP ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetGainSwitchParams(HiLoThresh, HiLoPOP, LoHiThresh, LoHiPOP, MediumThresh, MediumPOP, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::SetBadPixelNew ( short row, short column, short pixelValue ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetBadPixelNew(row, column, pixelValue, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::CalculateFrameDiff ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_CalculateFrameDiff(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::CalculateGainFrame ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_CalculateGainFrame(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT ITau::FindBadPixels ( enum Result * Result ) {
+    HRESULT _hr = raw_FindBadPixels(Result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline enum Result ITau::GetBaudRate ( short * baudRate ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetBaudRate(baudRate, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT ITau::SetBaudRate ( short baudRate, enum Result * Result ) {
+    HRESULT _hr = raw_SetBaudRate(baudRate, Result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline enum Result ITau::WriteGainTableNew ( short gainTableType, short tableNum ) {
+    enum Result _result;
+    HRESULT _hr = raw_WriteGainTableNew(gainTableType, tableNum, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::CalculateGain ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_CalculateGain(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::GetFlashStatus ( short * status ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetFlashStatus(status, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result ITau::GetNonVolatileFFCAddress ( short lensNumber, unsigned long * address ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetNonVolatileFFCAddress(lensNumber, address, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IPhotonCam wrapper method implementations
+//
+
+inline enum Result IPhotonCam::GetAGCFilterValue ( short * value ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetAGCFilterValue(value, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetAGCFilterValue ( short value ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetAGCFilterValue(value, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetAGCMean ( short * mean ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetAGCMean(mean, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetAGCROI ( short * left, short * top, short * right, short * bottom ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetAGCROI(left, top, right, bottom, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetAGCROI ( short left, short top, short right, short bottom ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetAGCROI(left, top, right, bottom, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetAGCType ( enum AGCAlgorithm * agcType ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetAGCType(agcType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetAGCType ( enum AGCAlgorithm agcType ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetAGCType(agcType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetBrightness ( short * brightness ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetBrightness(brightness, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetBrightness ( short brightness ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetBrightness(brightness, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetBrightnessBias ( short * bias ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetBrightnessBias(bias, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetBrightnessBias ( short bias ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetBrightnessBias(bias, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetContrast ( short * contrast ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetContrast(contrast, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetContrast ( short contrast ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetContrast(contrast, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetITTMidpoint ( short * midpoint ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetITTMidpoint(midpoint, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetITTMidpoint ( short midpoint ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetITTMidpoint(midpoint, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetMaxAGCGain ( short * value ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetMaxAGCGain(value, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetMaxAGCGain ( short value ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetMaxAGCGain(value, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetPlateauValue ( short * value ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetPlateauValue(value, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetPlateauValue ( short value ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetPlateauValue(value, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::DoNoOp ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_DoNoOp(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::DoReset ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_DoReset(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetFPATemp ( enum FPATempMode mode, short * temp ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetFPATemp(mode, temp, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetRevision ( long * swVersion, long * fwVersion ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetRevision(swVersion, fwVersion, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetOptions ( enum Options * Options ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetOptions(Options, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::RestoreFactoryDefaults ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_RestoreFactoryDefaults(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetSerialNum ( long * serialNum ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetSerialNum(serialNum, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetPowerUpDefaults ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetPowerUpDefaults(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetPartNumber ( BSTR * partNumber ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetPartNumber(partNumber, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::DoFFC ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_DoFFC(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetFFCMeanValue ( short * value ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetFFCMeanValue(value, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetFFCMeanValue ( short value ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetFFCMeanValue(value, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetFFCMode ( enum FFCMode * FFCMode ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetFFCMode(FFCMode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetFFCMode ( enum FFCMode FFCMode ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetFFCMode(FFCMode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetFFCPeriod ( short * ffcPeriod ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetFFCPeriod(ffcPeriod, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetFFCPeriod ( short ffcPeriod ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetFFCPeriod(ffcPeriod, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetFFCTempDelta ( short * ffcTempDelta ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetFFCTempDelta(ffcTempDelta, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetFFCTempDelta ( short ffcTempDelta ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetFFCTempDelta(ffcTempDelta, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetFFCWarnTime ( short * time ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetFFCWarnTime(time, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetFFCWarnTime ( short time ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetFFCWarnTime(time, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetShutterPosition ( enum ShutterPosition * position ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetShutterPosition(position, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetShutterPosition ( enum ShutterPosition position ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetShutterPosition(position, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetIsothermMode ( enum IsothermMode * mode ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetIsothermMode(mode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetIsothermMode ( enum IsothermMode mode ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetIsothermMode(mode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetIsothermThresholds ( enum IsothermThresholdType * isoType, short * lowerThreshold, short * upperThreshold ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetIsothermThresholds(isoType, lowerThreshold, upperThreshold, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetIsothermThresholds ( enum IsothermThresholdType isoType, short lowerThreshold, short upperThreshold ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetIsothermThresholds(isoType, lowerThreshold, upperThreshold, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetGainMode ( enum GainMode * GainMode ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetGainMode(GainMode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetGainMode ( enum GainMode GainMode ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetGainMode(GainMode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetSpotTemp ( short * temp ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetSpotTemp(temp, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetSpotDisplay ( enum SpotDisplay * display ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetSpotDisplay(display, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetSpotDisplay ( enum SpotDisplay display ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetSpotDisplay(display, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetSpotMeterMode ( enum SpotMeterMode * mode ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetSpotMeterMode(mode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetSpotMeterMode ( enum SpotMeterMode mode ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetSpotMeterMode(mode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetDigitalOut ( enum DigitalOut * digitalOutput ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetDigitalOut(digitalOutput, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetDigitalOut ( enum DigitalOut digitalOutput ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetDigitalOut(digitalOutput, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetSyncMode ( enum ExtSyncMode * mode ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetSyncMode(mode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetSyncMode ( enum ExtSyncMode mode ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetSyncMode(mode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetTestPattern ( enum TestPattern * pattern ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetTestPattern(pattern, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetTestPattern ( enum TestPattern pattern ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetTestPattern(pattern, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetOrientation ( enum ImageOrientation * ImageOrientation ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetOrientation(ImageOrientation, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetOrientation ( enum ImageOrientation ImageOrientation ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetOrientation(ImageOrientation, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetPanTilt ( short * x, short * y ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetPanTilt(x, y, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetPanTilt ( short x, short y ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetPanTilt(x, y, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetVideoLUT ( enum ColorLut * lut ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetVideoLUT(lut, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetVideoLUT ( enum ColorLut lut ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetVideoLUT(lut, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetVideoMode ( enum VideoMode * VideoMode ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetVideoMode(VideoMode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetVideoMode ( enum VideoMode VideoMode ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetVideoMode(VideoMode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetDDEGain ( short * gain ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetDDEGain(gain, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetDDEGain ( short gain ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetDDEGain(gain, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetDDEThreshold ( short * threshold ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetDDEThreshold(threshold, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetDDEThreshold ( short threshold ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetDDEThreshold(threshold, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetDDESpatialThreshold ( short * threshold ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetDDESpatialThreshold(threshold, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetDDESpatialThreshold ( short threshold ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetDDESpatialThreshold(threshold, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IPhotonCam::GetErrorString ( enum Result errorCode, BSTR * s ) {
+    long _result = 0;
+    HRESULT _hr = raw_GetErrorString(errorCode, s, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::StartSplashScreenDownload ( LPSTR filename ) {
+    enum Result _result;
+    HRESULT _hr = raw_StartSplashScreenDownload(filename, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::StartUpgradeCamera ( LPSTR filename ) {
+    enum Result _result;
+    HRESULT _hr = raw_StartUpgradeCamera(filename, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IPhotonCam::CancelAsyncFunction ( ) {
+    HRESULT _hr = raw_CancelAsyncFunction();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline enum Result IPhotonCam::OpenComm ( _bstr_t device ) {
+    enum Result _result;
+    HRESULT _hr = raw_OpenComm(device, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::CloseComm ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_CloseComm(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetComm ( int index, BSTR * device ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetComm(index, device, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetDigitalWindow ( short * left, short * top, short * right, short * bottom ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetDigitalWindow(left, top, right, bottom, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetDynamicDDE ( short * value ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetDynamicDDE(value, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetDynamicDDE ( short value ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetDynamicDDE(value, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetDDEState ( short * ddeState ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetDDEState(ddeState, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetDDEState ( short ddeState ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetDDEState(ddeState, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetProductId ( short * productId ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetProductId(productId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetVideoModeNew ( enum VideoMode * VideoMode ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetVideoModeNew(VideoMode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetVideoModeNew ( enum VideoMode VideoMode ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetVideoModeNew(VideoMode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetGainSwitchParams ( short * HiLoThresh, short * HiLoPOP, short * LoHiThresh, short * LoHiPOP ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetGainSwitchParams(HiLoThresh, HiLoPOP, LoHiThresh, LoHiPOP, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetGainSwitchParams ( short HiLoThresh, short HiLoPOP, short LoHiThresh, short LoHiPOP ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetGainSwitchParams(HiLoThresh, HiLoPOP, LoHiThresh, LoHiPOP, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetVideoStandard ( enum VideoStandard * standard ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetVideoStandard(standard, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetVideoStandard ( enum VideoStandard standard ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetVideoStandard(standard, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::DownloadFile ( LPSTR filename, long offset ) {
+    enum Result _result;
+    HRESULT _hr = raw_DownloadFile(filename, offset, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::EraseFlashBlock ( short blockNumber ) {
+    enum Result _result;
+    HRESULT _hr = raw_EraseFlashBlock(blockNumber, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::ReadMemory ( long addr, short byteCount, unsigned char * data ) {
+    enum Result _result;
+    HRESULT _hr = raw_ReadMemory(addr, byteCount, data, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::WriteMemory ( long addr, short byteCount, unsigned char * data ) {
+    enum Result _result;
+    HRESULT _hr = raw_WriteMemory(addr, byteCount, data, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetCorrectionMask ( short * correctionMask ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetCorrectionMask(correctionMask, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetCorrectionMask ( short correctionMask ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetCorrectionMask(correctionMask, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetExtOffsetState ( enum ExtOffsetState * state ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetExtOffsetState(state, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetExtOffsetState ( enum ExtOffsetState state ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetExtOffsetState(state, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetSDKDeviceId ( int * pDeviceId ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetSDKDeviceId(pDeviceId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetVideoColor ( enum VideoColor * color ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetVideoColor(color, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetVideoColor ( enum VideoColor color ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetVideoColor(color, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetAnalogVideoOnOff ( enum VideoMode * state ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetAnalogVideoOnOff(state, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetAnalogVideoOnOff ( enum VideoMode state ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetAnalogVideoOnOff(state, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetZoomMode ( enum VideoMode * zoomMode ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetZoomMode(zoomMode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetZoomMode ( enum VideoMode zoomMode ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetZoomMode(zoomMode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetFreezeMode ( enum VideoMode * freezeMode ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetFreezeMode(freezeMode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetFreezeMode ( enum VideoMode freezeMode ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetFreezeMode(freezeMode, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::CalcSupplementalOffset ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_CalcSupplementalOffset(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::WriteSupplementalOffset ( ) {
+    enum Result _result;
+    HRESULT _hr = raw_WriteSupplementalOffset(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::CaptureFrames ( short captureBuffer ) {
+    enum Result _result;
+    HRESULT _hr = raw_CaptureFrames(captureBuffer, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetParameters ( int functionId, int byteCount, short * buffer ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetParameters(functionId, byteCount, buffer, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetParameters ( int functionId, int byteCount, short * buffer ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetParameters(functionId, byteCount, buffer, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetSplashNumber ( int splashNumber ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetSplashNumber(splashNumber, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetSplash1Delay ( int delay ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetSplash1Delay(delay, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetSplash2Delay ( int delay ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetSplash2Delay(delay, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetFFCTempDeltas ( short ffcTempDelta, short ffcTempDeltaLoGain ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetFFCTempDeltas(ffcTempDelta, ffcTempDeltaLoGain, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetFFCTempDeltas ( short * ffcTempDelta, short * ffcTempDeltaLoGain ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetFFCTempDeltas(ffcTempDelta, ffcTempDeltaLoGain, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetFFCPeriods ( short ffcPeriod, short ffcPeriodLowGain ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetFFCPeriods(ffcPeriod, ffcPeriodLowGain, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetFFCPeriods ( short * ffcPeriod, short * ffcPeriodLowGain ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetFFCPeriods(ffcPeriod, ffcPeriodLowGain, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetLibraryVersion ( unsigned short * major, unsigned short * minor, unsigned short * revision, unsigned short * build ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetLibraryVersion(major, minor, revision, build, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetParamsWithTimeout ( int functionId, int byteCount, short * buffer, int timeout ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetParamsWithTimeout(functionId, byteCount, buffer, timeout, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetParamsWithTimeout ( int functionId, int byteCount, short * buffer, int timeout ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetParamsWithTimeout(functionId, byteCount, buffer, timeout, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetFPAExtents ( short * fpaCols, short * fpaRows, short * blindRows ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetFPAExtents(fpaCols, fpaRows, blindRows, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetBasketBoardCommDestId ( enum CalDestinationId destinationId ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetBasketBoardCommDestId(destinationId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetBasketBoardSubslotId ( int subSlotId ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetBasketBoardSubslotId(subSlotId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetComTimeout ( int timeoutInMsecs ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetComTimeout(timeoutInMsecs, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetComTimeout ( int * timeoutInMsecs ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetComTimeout(timeoutInMsecs, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetBasketBoardCommDestId ( enum CalDestinationId * destinationId ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetBasketBoardCommDestId(destinationId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetBasketBoardSubSlotId ( int * subSlotId ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetBasketBoardSubSlotId(subSlotId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetSDKDeviceId ( int deviceId ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetSDKDeviceId(deviceId, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetFourUpMode ( int IsFourUp ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetFourUpMode(IsFourUp, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetFourUpMode ( int * IsFourUp ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetFourUpMode(IsFourUp, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetCommRetries ( int numOfRetries ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetCommRetries(numOfRetries, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetCommRetries ( int * numOfRetries ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetCommRetries(numOfRetries, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetThreeIsothermThresholds ( enum IsothermThresholdType isoType, short lowerThreshold, short midThreshold, short upperThreshold ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetThreeIsothermThresholds(isoType, lowerThreshold, midThreshold, upperThreshold, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::GetThreeIsothermThresholds ( enum IsothermThresholdType * isoType, short * lowerThreshold, short * midThreshold, short * upperThreshold ) {
+    enum Result _result;
+    HRESULT _hr = raw_GetThreeIsothermThresholds(isoType, lowerThreshold, midThreshold, upperThreshold, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::SetOptions ( enum Options Options ) {
+    enum Result _result;
+    HRESULT _hr = raw_SetOptions(Options, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum Result IPhotonCam::LoadNucTable ( short tableNum ) {
+    enum Result _result;
+    HRESULT _hr = raw_LoadNucTable(tableNum, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// dispinterface _ITauEvents wrapper method implementations
+//
+
+inline HRESULT _ITauEvents::ProgressStep ( _bstr_t step ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0008", (BSTR)step);
+}
+
+inline HRESULT _ITauEvents::ProgressPercentage ( int exitCode ) {
+    return _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0003", exitCode);
+}
+
+inline HRESULT _ITauEvents::ExitStatus ( int exitCode ) {
+    return _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0003", exitCode);
+}
